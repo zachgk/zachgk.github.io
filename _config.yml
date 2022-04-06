@@ -13,15 +13,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Zach's Blog
+locale: "en-US"
+email: zachary@kimberg.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
-minimal_mistakes_skin: default
+  This is a blog for me to share thoughts and ideas. You will find
+  lots of content on software development and programming languages.
+twitter_username: zachkimberg
+github_username: zachgk
+minimal_mistakes_skin: contrast
 search: true
 
 # Build settings
@@ -31,7 +31,8 @@ remote_theme: mmistakes/minimal-mistakes
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+repository: "zachgk/zachgk.github.io"
 
 include:
   - _pages
@@ -57,35 +58,60 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-ZEMWYB8NN3"
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "zachkimberg"
+twitter:
+  username: "zachkimberg"
+facebook:
+  username: "zach.kimberg"
+social:
+  type: "Person"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
+    - "https://twitter.com/zachgk"
+    - "https://www.facebook.com/zach.kimberg"
+    - "https://www.linkedin.com/in/zachkimberg"
+
+author:
+  name   : "Zach Kimberg"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "Software developer interested in deep learning and programming languages. Currently at AWS but thoughts are my own."
+  links:
+    # - label: "Website"
+    # icon: "fas fa-fw fa-link"
+    # url: "https://"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/zachkimberg"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/zachgk"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/zachkimberg"
+    #  - label: "Instagram"
+    #  icon: "fab fa-fw fa-instagram"
+    #  url: "https://instagram.com/"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/zachkimberg"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/zachgk"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/zachkimberg"
+    # - label: "Instagram"
+    # icon: "fab fa-fw fa-instagram"
+    # url: "https://instagram.com/"
 
 defaults:
   # _posts
@@ -94,6 +120,7 @@ defaults:
       type: posts
     values:
       layout: single
+      show_date: true
       author_profile: true
       read_time: true
       comments: true
