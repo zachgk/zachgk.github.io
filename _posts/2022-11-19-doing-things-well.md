@@ -4,9 +4,7 @@ categories:
   - Programming Languages
 tags:
   - Choice
-hidden: true
 ---
-
 
 There is a big difference between trying to do something and trying to do something well. They represent different modalities of action and no good comes from conflating them.
 
@@ -90,9 +88,13 @@ Another way to think about this use of interface functions is like C++ templates
 
 You can also think about it as maximizing choices. The more and more powerful interface functions that you use, the more choices you have available to you later. It may even produce choices that you wouldn't have thought of otherwise.
 
-The final way I will suggest it to think about it like postponing a choice. Let's say you are reading through some code and come across a usage of an `ArrayList`. Now, did the programmer choose an `ArrayList` after lots of careful thought and experimentation. Or, did they assume it seemed reasonable enough and they had to choose something.
+Or, you can think about it like postponing a choice. Let's say you are reading through some code and come across a usage of an `ArrayList`. Now, did the programmer choose an `ArrayList` after lots of careful thought and experimentation. Or, did they assume it seemed reasonable enough and they had to choose something so that was their mostly careless thought.
 
 The problem is that languages without interface functions force you to always make choices. With interface functions, you can leave these thoughtless choices for later or someone else. It also means that you know where deliberation occurred and where it didn't. And, it highlights where deliberation should include comments explaining it.
+
+The final way I will suggest is to think about it like imprecise language. If you have a statement like "Go to the store and buy some milk" in English, it would be perfectly understandable. But, in code you have to specify all details such as what store and what kind of milk. The burden of all of these details is a large part of why writing code is so laborious.
+
+But, it's not like we can just make these details disappear. They are part of the essential complexity. Instead, choice provides a way to decompose the problem. If using the interface is like these hand-wavy imprecise statements, the options and choice are the strategy for filling in the missing details. First off, this makes it easier to understand how details are filled in and why. But perhaps more importantly, the ability to write imprecise code can make progress in bridging the gap to make code as easy to write as natural language.
 
 So far, you have declared an interface function and used it in the code. The next missing functionality is to provide implementations of the interface function. These work like most implementations of an interface, interface function, or type class. The only minor thing to keep in mind is that there needs to be a name attached to each implementation so you can refer to them later when making the choice.
 
@@ -130,4 +132,16 @@ Choice has a lot of potential here in two ways. One is that it makes implementin
 
 On the usage side, it defines a clear mechanism to control the metaprogramming. You can define both singular actions and whole patterns to improve. For example, you might change the memory management scheme of every graph. Or, you could easily rearchitect your cloud system. Either way, it will give you far greater control because choices are easy to implement. And, it is so easy because the metaprogramming is doing all the heavy lifting for you.
 
-If you have made it this far, hopefully you have some understanding of choice. Once you see it, you will start noticing how pervasive it is. Many different problems are equivalent to choice. Many difficulties come because there is no tool for choice. And hopefully, now that you understand it better then you can solve it better as well.
+Overall, there are many ways that modern programming falls short of the possibilities. Of all of them, choice is by far the most impactful. I think the lack of good solutions to manage this problem is significant enough to noticeably hold back the entire field of software development.
+
+For this reason, I hope to attract more attention to this type of problem and how it is structured. As a first step, there can be implementations of it in other programming languages or libraries.
+
+However, this is only a partial solution. First, choice can only be at it's best with a powerful type system such as refinement types. These types can show key details such as that a list has few elements. These details propagate contextual understanding and act as a fuel for making effective choices.
+
+The second key area is through metaprogramming. While not strictly the same problem, it is no doubt that these two combine to revolutionary effect. Languages that lack natural metaprogramming integration would still benefit from choice, but couldn't bring out it's greatest effect.
+
+Finally, it is also a difficult change to make to a language. Fundamentally, it makes a function behave non-deterministically. Even with the easiest implementation, it would require an additional compiler pass to convert it from non-deterministic back to deterministic again. This could also bleed into other tooling and IDE implementations.
+
+As a library, it is easier to implement. But, it does require that the language makes accessible a call stack to determine the context. In addition, it also adds a runtime cost to choices that could have been made statically. This creates an unnecessary tradeoff which can make it more burdensome to adopt.
+
+For this reason, I have been working on [Catln](catln.dev/) to provide a complete solution. Between these options, one day we may see a brighter future of programming.
